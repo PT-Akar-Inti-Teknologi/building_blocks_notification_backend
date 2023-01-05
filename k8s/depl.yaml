@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admins-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: building-blocks
+      service: admins
+  template:
+    metadata:
+      labels:
+        app: building-blocks
+        service: admins
+        sidecar.istio.io/inject: "true"
+        version: "1"
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+      - name: admins
+        image: ait-cr.akarinti.tech/admin-be
+        #resources:
+        #  requests:
+        #    memory: "500Mi"
+        #    cpu: "250m"
+        #  limits:
+        #    memory: "1G"
+        #    cpu: "500m"
+        ports:
+          - name: admins
+            protocol: TCP
+            containerPort: 3000
+        envFrom:
+          - configMapRef:
+              name: admin-be-config
+              #readinessProbe:
+              #httpGet:
+              #path: /
+              #port: 3000
+              #initialDelaySeconds: 3
+              #periodSeconds: 3
+              #failureThreshold: 2
