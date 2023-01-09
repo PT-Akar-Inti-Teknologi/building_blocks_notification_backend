@@ -15,6 +15,8 @@ export class CreatePushNotificationsDto {
 
   messages: string;
 
+  segmentation_id: string;
+
   @IsEnum(EnumMessageType)
   message_type: EnumMessageType;
 

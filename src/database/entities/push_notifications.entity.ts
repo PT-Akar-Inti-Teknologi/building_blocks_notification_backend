@@ -9,6 +9,7 @@ import {
 import { ModelBase } from '../../base/model/model.base';
 import { PushNotificationClickResponsesDocument } from './push_notification_click_responses.entity';
 import { PushNotificationUsersDocument } from './push_notification_users.entity';
+import { SegmentationsDocument } from './segmentations.entity';
 
 export enum EnumDevice {
   ALL = 'ALL',
@@ -71,7 +72,11 @@ export class PushNotificationsDocument extends ModelBase {
   })
   status: EnumPushNotificationsStatus;
 
-  segments_id: string;
+  segmentation_id: string;
+
+  @ManyToOne(() => SegmentationsDocument, (model) => model.push_notifications)
+  @JoinColumn({ name: 'segmentation_id' })
+  segmentation: SegmentationsDocument;
 
   @Column({
     type: 'enum',

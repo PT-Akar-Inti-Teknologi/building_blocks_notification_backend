@@ -20,10 +20,7 @@ import { ResponseService } from 'src/response/response.service';
 import { BaseController } from '../base/controller/controller.base';
 import { CreatePushNotificationsDto } from './dto/create-push-notifications.dto';
 import { UpdatePushNotificationsDto } from './dto/update-push-notifications.dto';
-import {
-  EnumPushNotificationsStatus,
-  PushNotificationsDocument,
-} from '../database/entities/push_notifications.entity';
+import { PushNotificationsDocument } from '../database/entities/push_notifications.entity';
 import { PushNotificationsService } from './push-notifications.service';
 import { IndexPushNotificationsDto } from './dto/index-push-notifications.dto';
 import { FileInterceptor } from '@nestjs/platform-express';

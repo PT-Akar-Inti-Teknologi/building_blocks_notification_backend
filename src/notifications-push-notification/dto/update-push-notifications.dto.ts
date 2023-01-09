@@ -19,6 +19,8 @@ export class UpdatePushNotificationsDto {
   @IsEnum(EnumMessageType)
   message_type: EnumMessageType;
 
+  segmentation_id: string;
+
   @IsEnum(EnumDeliveryOptions)
   delivery_options: EnumDeliveryOptions;
 
