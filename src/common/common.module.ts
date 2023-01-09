@@ -7,10 +7,8 @@ import { CommonStorageService } from './storage/storage.service';
 import { ResponseService } from 'src/response/response.service';
 import { BullModule } from '@nestjs/bull';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { MainBannersDocument } from 'src/database/entities/main_banners.entity';
 import { RedisMainBannerService } from './redis/redis-main-banner.service';
 import { RedisMainBannerProcessor } from './redis/redis-main-banner.processor';
-import { MainBannersService } from '../admins-main-banners/main-banners.service';
 import { RedisPushNotificationsService } from './redis/redis-push-notifications.service';
 import { RedisPushNotificationsProcessor } from './redis/redis-push-notifications.processor';
 
@@ -42,7 +40,7 @@ import { RedisPushNotificationsProcessor } from './redis/redis-push-notification
     BullModule.registerQueue({
       name: 'admins',
     }),
-    TypeOrmModule.forFeature([MainBannersDocument]),
+    TypeOrmModule.forFeature([]),
   ],
   providers: [
     CommonService,
@@ -51,7 +49,6 @@ import { RedisPushNotificationsProcessor } from './redis/redis-push-notification
     ResponseService,
     RedisMainBannerService,
     RedisMainBannerProcessor,
-    MainBannersService,
     RedisPushNotificationsService,
     RedisPushNotificationsProcessor,
   ],
