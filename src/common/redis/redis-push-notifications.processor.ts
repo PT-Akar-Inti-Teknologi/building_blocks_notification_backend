@@ -5,7 +5,9 @@ import { Job } from 'bull';
 
 @Processor('admins')
 export class RedisPushNotificationsProcessor {
-  constructor(private readonly pushNotificationsService: PushNotificationsService) {}
+  constructor(
+    private readonly pushNotificationsService: PushNotificationsService,
+  ) {}
   private readonly logger = new Logger(RedisPushNotificationsProcessor.name);
 
   @Process('autoActivePushNotification')
