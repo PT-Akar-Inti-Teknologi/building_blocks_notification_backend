@@ -3,7 +3,7 @@ import { BadRequestException, HttpStatus, Logger } from '@nestjs/common';
 import { ErrorMessageInterface } from '../response/response.interface';
 import { Readable } from 'stream';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PushNotificationsDocument } from '../database/entities/push_notifications.entity';
+import { PushNotificationsDocument } from './entities/push_notifications.entity';
 import { ServiceBase } from '../base/service/service.base';
 import { MessageService } from '../message/message.service';
 import { ResponseService } from '../response/response.service';

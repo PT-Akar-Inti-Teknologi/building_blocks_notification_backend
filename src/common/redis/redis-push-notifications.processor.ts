@@ -1,6 +1,6 @@
 import { Process, Processor } from '@nestjs/bull';
 import { Logger } from '@nestjs/common';
-import { PushNotificationsService } from '../../notifications-push-notification/push-notifications.service';
+import { PushNotificationsService } from '../../push-notification/push-notifications.service';
 import { Job } from 'bull';
 
 @Processor('admins')

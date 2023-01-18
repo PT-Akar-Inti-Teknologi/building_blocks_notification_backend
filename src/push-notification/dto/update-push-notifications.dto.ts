@@ -3,7 +3,7 @@ import {
   EnumDeliveryType,
   EnumDevice,
   EnumMessageType,
-} from '../../database/entities/push_notifications.entity';
+} from '../entities/push_notifications.entity';
 import { IsEnum, IsOptional } from 'class-validator';
 
 export class UpdatePushNotificationsDto {

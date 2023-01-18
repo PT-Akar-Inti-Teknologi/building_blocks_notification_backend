@@ -9,7 +9,7 @@ import {
 import { ModelBase } from '../../base/model/model.base';
 import { PushNotificationClickResponsesDocument } from './push_notification_click_responses.entity';
 import { PushNotificationUsersDocument } from './push_notification_users.entity';
-import { SegmentationsDocument } from './segmentations.entity';
+import { SegmentationsDocument } from '../../segmentation/entities/segmentations.entity';
 
 export enum EnumDevice {
   ALL = 'ALL',

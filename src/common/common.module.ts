@@ -9,8 +9,8 @@ import { BullModule } from '@nestjs/bull';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RedisPushNotificationsService } from './redis/redis-push-notifications.service';
 import { RedisPushNotificationsProcessor } from './redis/redis-push-notifications.processor';
-import { PushNotificationsService } from '../notifications-push-notification/push-notifications.service';
-import { PushNotificationsDocument } from '../database/entities/push_notifications.entity';
+import { PushNotificationsService } from '../push-notification/push-notifications.service';
+import { PushNotificationsDocument } from '../push-notification/entities/push_notifications.entity';
 
 @Global()
 @Module({

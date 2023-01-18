@@ -5,10 +5,10 @@ import { ResponseService } from 'src/response/response.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SegmentationService } from './segmentation.service';
 import { HashService } from '../hash/hash.service';
-import { SegmentationsDocument } from '../database/entities/segmentations.entity';
-import { PushNotificationsDocument } from '../database/entities/push_notifications.entity';
-import { PushNotificationUsersDocument } from '../database/entities/push_notification_users.entity';
-import { PushNotificationClickResponsesDocument } from '../database/entities/push_notification_click_responses.entity';
+import { SegmentationsDocument } from './entities/segmentations.entity';
+import { PushNotificationsDocument } from '../push-notification/entities/push_notifications.entity';
+import { PushNotificationUsersDocument } from '../push-notification/entities/push_notification_users.entity';
+import { PushNotificationClickResponsesDocument } from '../push-notification/entities/push_notification_click_responses.entity';
 
 @Module({
   imports: [

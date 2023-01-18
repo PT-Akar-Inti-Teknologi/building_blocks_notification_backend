@@ -1,4 +1,4 @@
-import { TargetUserTypeEnum } from '../../database/entities/segmentations.entity';
+import { TargetUserTypeEnum } from '../entities/segmentations.entity';
 import { IsEnum } from 'class-validator';
 
 export class CreateSegmentationDTO {

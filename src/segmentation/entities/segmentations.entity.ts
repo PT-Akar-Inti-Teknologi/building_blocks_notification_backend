@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ModelBase } from '../../base/model/model.base';
-import { PushNotificationsDocument } from './push_notifications.entity';
+import { PushNotificationsDocument } from '../../push-notification/entities/push_notifications.entity';
 
 export enum TargetUserTypeEnum {
   ALL_USER = 'ALL_USER',

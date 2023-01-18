@@ -8,7 +8,7 @@ import { IndexPushNotificationsDto } from './dto/index-push-notifications.dto';
 import {
   EnumPushNotificationsStatus,
   PushNotificationsDocument,
-} from '../database/entities/push_notifications.entity';
+} from './entities/push_notifications.entity';
 import { DateTimeUtils } from '../utils/date-time-utils';
 import { RedisPushNotificationsService } from '../common/redis/redis-push-notifications.service';
 

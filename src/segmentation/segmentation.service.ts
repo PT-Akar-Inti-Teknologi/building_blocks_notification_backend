@@ -4,7 +4,7 @@ import { Repository, SelectQueryBuilder } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { QueryBuilderPaginationUtils } from '../utils/query-builder-pagination.utils';
 import { PaginationTransformer } from '../base/transformers/index.transformer';
-import { SegmentationsDocument } from '../database/entities/segmentations.entity';
+import { SegmentationsDocument } from './entities/segmentations.entity';
 import { IndexSegmentationDTO } from './dto/index-segmentation.dto';
 
 @Injectable()

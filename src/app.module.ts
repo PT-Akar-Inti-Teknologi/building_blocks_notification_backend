@@ -8,7 +8,7 @@ import { InternalModule } from './internal/internal.module';
 import { SeederModule } from './database/seeders/seeder.module';
 import { CommonModule } from './common/common.module';
 import { BullModule } from '@nestjs/bull';
-import { PushNotificationsModule } from './notifications-push-notification/push-notifications.module';
+import { PushNotificationsModule } from './push-notification/push-notifications.module';
 
 @Module({
   imports: [

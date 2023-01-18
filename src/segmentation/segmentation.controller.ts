@@ -14,7 +14,7 @@ import { SegmentationService } from './segmentation.service';
 import { PaginationTransformer } from '../base/transformers/index.transformer';
 import { CreateSegmentationDTO } from './dto/create-segmentation.dto';
 import { UpdateSegmentationDTO } from './dto/update-segmentation.dto';
-import { SegmentationsDocument } from '../database/entities/segmentations.entity';
+import { SegmentationsDocument } from './entities/segmentations.entity';
 import { IndexSegmentationDTO } from './dto/index-segmentation.dto';
 
 @Controller('api/v1/admins/push-notifications')

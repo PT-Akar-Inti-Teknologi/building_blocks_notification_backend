@@ -7,10 +7,10 @@ import { PushNotificationsService } from './push-notifications.service';
 import { PushNotificationsImageService } from './push-notifications-image.service';
 import { ImageValidationService } from '../utils/image-validation.service';
 import { HashService } from '../hash/hash.service';
-import { PushNotificationsDocument } from '../database/entities/push_notifications.entity';
-import { PushNotificationUsersDocument } from '../database/entities/push_notification_users.entity';
-import { PushNotificationClickResponsesDocument } from '../database/entities/push_notification_click_responses.entity';
-import { SegmentationsDocument } from '../database/entities/segmentations.entity';
+import { PushNotificationsDocument } from './entities/push_notifications.entity';
+import { PushNotificationUsersDocument } from './entities/push_notification_users.entity';
+import { PushNotificationClickResponsesDocument } from './entities/push_notification_click_responses.entity';
+import { SegmentationsDocument } from '../segmentation/entities/segmentations.entity';
 
 @Module({
   imports: [
