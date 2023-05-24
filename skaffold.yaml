@@ -5,7 +5,10 @@ deploy:
     manifests:
       - "./k8s/*"
 build:
+  tagPolicy:
+    gitCommit:
+      prefix: ${AITGITBRANCH}- 
   artifacts:
-    - image: ait-cr.akarinti.tech/admin-be
+    - image: aitops/${AITGITNAME}
       docker:
-        dockerfile: prod.Dockerfile
+        dockerfile: Dockerfile

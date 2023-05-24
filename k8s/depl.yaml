@@ -1,44 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: admins-depl
+  name: ${AITPROJNAME}-depl
+  labels:
+    app: ${AITGITCLIENT}
+    service: ${AITGITSERVICE}
+    ait.tech/${AITGITNAME}: ${AITGITBRANCH}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: building-blocks
-      service: admins
+      app: ${AITGITCLIENT}
+      service: ${AITGITSERVICE}
   template:
     metadata:
       labels:
-        app: building-blocks
-        service: admins
-        sidecar.istio.io/inject: "true"
-        version: "1"
+        app: ${AITGITCLIENT}
+        service: ${AITGITSERVICE}
+      annotations:
+        co.elastic.logs/enabled: "true"
+        co.elastic.logs.json-logging/json.keys_under_root: "true"
+        co.elastic.logs.json-logging/json.add_error_key: "true"
+        co.elastic.logs.json-logging/json.message_key: "message"
     spec:
       imagePullSecrets:
-        - name: registry-secret
+        - name: ait-registry-secret
       containers:
-      - name: admins
-        image: ait-cr.akarinti.tech/admin-be
-        #resources:
-        #  requests:
-        #    memory: "500Mi"
-        #    cpu: "250m"
-        #  limits:
-        #    memory: "1G"
-        #    cpu: "500m"
-        ports:
-          - name: admins
-            protocol: TCP
-            containerPort: 3000
+      - name: ${AITPROJNAME}
+        image: aitops/${AITGITNAME}
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "50m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
         envFrom:
           - configMapRef:
-              name: admin-be-config
-              #readinessProbe:
-              #httpGet:
-              #path: /
-              #port: 3000
-              #initialDelaySeconds: 3
-              #periodSeconds: 3
-              #failureThreshold: 2
+              name: ${AITPROJNAME}-config
